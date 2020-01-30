@@ -7,33 +7,49 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <!-- fancy box -->
-    <link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css" />
+
     <link rel="stylesheet" href="main.css" />
     <meta charset="UTF-8" />
     <title>Bookstore</title>
   </head>
   <body>
+    <!-- TopNav-->
     <div class="d-flex p-2 bd-highlight">
       <div class="p-2 bd-highlight">
         <img src="./images/logo.PNG" alt="logo" />
       </div>
-      <div class="p-2 bd-highlight">
-        <input type="text" placeholder="Busca tu libro..." />
+      <div class="topnav">
+        <input
+          type="text"
+          id="myInput"
+          onkeyup="filter()"
+          placeholder=" Busca tu libro..."
+        />
       </div>
     </div>
 
-    <!-- images  -->
+    <!-- Content  -->
 
-    <center>
-      <!-- <a
-        data-fancybox="gallery"
-        href="big_1.jpg"
-        data-caption="Caption for single image"
-        ><img src="small_1.jpg"
-      /></a>
-      <a data-fancybox="gallery" href="big_2.jpg"><img src="small_2.jpg"/></a> -->
-    </center>
+    <div id="bookContainer" class="container">
+      <!-- <section>
+      
+        
+      
+        </section>
+      
+        <div class="flip-card">
+          <div  class="flip-card-inner">  
+            <div class="flip-card-front">
+              <img src="" alt="">
+            </div>
+            <div  class="flip-card-back">
+              
+            </div>
+          </div> -->
+      <!-- </div> -->
+    </div>
+
+    <!-- Footer  -->
     <!-- Bootstrap -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -50,10 +66,7 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <!-- Fancy box -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="jquery.fancybox.min.js"></script>
-    <script src="jquery.fancybox.js"></script>
+
     <script src="Untitled-1.js"></script>
     <script src="functions.js"></script>
   </body>

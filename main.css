@@ -10,27 +10,30 @@ body {
   margin: 0px;
   padding: 0px;
 }
+/*-------FLIP CARDS-------*/
 
-/* a img {
-  height: 35%;
-  width: 30%;
+.image {
+  width: 200px;
+  height: 300px;
+  border: 2px solid #a9a9a9;
 }
 
-a {
-  text-decoration: none;
-  outline: none;
-} */
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
+  margin: 30px;
   background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
 }
 
-/* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -40,29 +43,43 @@ a {
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  box-shadow: 10px 10px 5px grey;
 }
 
-/* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: #bbb;
   color: black;
 }
 
-/* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
-  color: white;
+  padding-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: antiquewhite;
+  border: 2px solid #a9a9a9;
+  color: black;
   transform: rotateY(180deg);
+  box-shadow: 10px 10px 5px grey;
+}
+
+.btn {
+  background-color: aliceblue;
+  color: black;
+}
+
+.text-inline {
+  text-decoration: underline;
 }
