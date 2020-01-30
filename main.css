@@ -7,9 +7,13 @@
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
+  text-align: justify;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  font-family: "Ledger", serif;
 }
+
 /*-------FLIP CARDS-------*/
 
 .image {
@@ -73,6 +77,8 @@ body {
   color: black;
   transform: rotateY(180deg);
   box-shadow: 10px 10px 5px grey;
+  background-color: black;
+  width: 100%;
 }
 
 .btn {
@@ -82,4 +88,12 @@ body {
 
 .text-inline {
   text-decoration: underline;
+}
+
+/************Bookcontainer*******************/
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

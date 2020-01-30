@@ -39,9 +39,9 @@ getAllDescription();
 // Render cover
 
 function renderCover() {
+  var bookContainer = document.getElementById("bookContainer");
   for (var i = 0; i < books.length; i++) {
     var title; //document..
-    var bookContainer = document.getElementById("bookContainer");
 
     var div1 = document.createElement("div");
     div1.className = "flip-card";
@@ -50,23 +50,21 @@ function renderCover() {
     div2.className = "flip-card-inner";
     div1.appendChild(div2);
 
+    var div3 = document.createElement("div");
+    div3.className = "flip-card-front";
+
     var img = document.createElement("img");
     img.setAttribute("src", books[i].cover);
-    div2.appendChild(img);
+    img.setAttribute("height", "auto");
+    img.setAttribute("width", "200px");
+    div3.appendChild(img);
 
-    var div3 = document.createElement("div");
-    div3.className = "flip-card-back";
+    var div4 = document.createElement("div");
+    div4.className = "flip-card-back";
 
+    div2.appendChild(div3);
+    div2.appendChild(div4);
     bookContainer.appendChild(div1);
   }
 }
 renderCover();
-
-//Image Propierties
-
-function imgPropierty() {
-  var elem = books[i].cover;
-  elem.setAttribute("height", "200px");
-  elem.setAttribute("width", "200px");
-}
-imgPropierty();
