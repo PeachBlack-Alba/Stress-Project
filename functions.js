@@ -1,49 +1,23 @@
 //Get Elements
 
 //Books
-let books = [];
+let allBooks = [];
 function getAllBooks() {
   for (i = 0; i < data.books.length; i++) {
-    books.push(data.books[i]);
+    allBooks.push(data.books[i]);
   }
+  renderCover(allBooks); // we want to show allbooks at the begging of the screen
 }
 getAllBooks();
 
-//Cover
-let cover = [];
-function getAllCover() {
-  for (i = 0; i < books.length; i++) {
-    cover.push(books[i].cover);
-  }
-}
-getAllCover();
-
-//Detail
-let detail = [];
-function getAllDetail() {
-  for (i = 0; i < books.length; i++) {
-    detail.push(books[i].detail);
-  }
-}
-getAllDetail();
-
-//Description
-let description = [];
-function getAllDescription() {
-  for (i = 0; i < books.length; i++) {
-    description.push(books[i].description);
-  }
-}
-getAllDescription();
-
 // Render cover
 
-function renderCover() {
+function renderCover(books) {
   var bookContainer = document.getElementById("bookContainer");
+  bookContainer.innerHTML = ""; // clean the bookcontainer at the begginig of this function so we don't get the results more than onces
   for (var i = 0; i < books.length; i++) {
-    var title; //document..
-
     var div1 = document.createElement("div");
+    div1.id = i;
     div1.className = "flip-card";
 
     var div2 = document.createElement("div");
@@ -65,6 +39,23 @@ function renderCover() {
     div2.appendChild(div3);
     div2.appendChild(div4);
     bookContainer.appendChild(div1);
-  }
+  } // we already called this function at the top
 }
-renderCover();
+
+// Search button
+
+function filter() {
+  let input = document.getElementById("searchbar").value;
+  console.log(input.toLowerCase());
+  let lowerInput = input.toLowerCase(); // we make it lowercase sensitive t = T
+  let filteredBooks = []; // new empty array
+  for (i = 0; i < allBooks.length; i++) {
+    let title = allBooks[i].title;
+
+    if (title.toLowerCase().includes(lowerInput)) {
+      // if the input matches with the title, send it to the filteredBooks array
+      filteredBooks.push(allBooks[i]); // we push the hole book, not just the title
+    }
+  }
+  renderCover(filteredBooks); // Render the function above with the filteredBooks array
+}

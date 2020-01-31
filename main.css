@@ -9,12 +9,12 @@
 body {
   text-align: justify;
   height: 100%;
-  width: 80%;
+  width: 60%;
   margin: auto;
   font-family: "Ledger", serif;
 }
 
-/*-------FLIP CARDS-------*/
+/*FLIP CARDS*/
 
 .image {
   width: 200px;
@@ -90,10 +90,30 @@ body {
   text-decoration: underline;
 }
 
-/************Bookcontainer*******************/
+/* Bookcontainer */
 
 .container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+/* Searchbar */
+
+#searchbar {
+  margin-left: 15%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+input[type="text"] {
+  width: 30%;
+  -webkit-transition: width 0.15s ease-in-out;
+  transition: width 0.15s ease-in-out;
+}
+
+/* When the input field gets focus, 
+        change its width to 100% */
+input[type="text"]:focus {
+  width: 70%;
 }
