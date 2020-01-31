@@ -59,3 +59,25 @@ function filter() {
   }
   renderCover(filteredBooks); // Render the function above with the filteredBooks array
 }
+
+// Create flip-card-back
+
+function backCard() {
+  let divBack = document.getElementsByClassName("flip-card-back");
+
+  let h1 = document.createElement("h1");
+  let title = allBooks[i].title;
+  title.innerHTML = title;
+  h1.appendChild(title);
+  divBack.appendChild(h1);
+
+  let p = document.createElement("p");
+  let description = allBooks[i].title;
+  description.innerHTML = description;
+  p.appendChild(description);
+  divBack.appendChild(p);
+
+  let button = document.createElement("button");
+  button.innerHTML = "Más información";
+  divBack.appendChild(button);
+}
