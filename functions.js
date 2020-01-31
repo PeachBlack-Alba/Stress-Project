@@ -36,6 +36,22 @@ function renderCover(books) {
     var div4 = document.createElement("div");
     div4.className = "flip-card-back";
 
+    let h1 = document.createElement("h1");
+    let title = allBooks[i].title;
+
+    h1.innerHTML = title;
+    div4.appendChild(h1);
+
+    let p = document.createElement("p");
+    let description = allBooks[i].title;
+    p.innerHTML = description;
+
+    div4.appendChild(p);
+
+    let button = document.createElement("button");
+    button.innerHTML = "Más información";
+    div4.appendChild(button);
+
     div2.appendChild(div3);
     div2.appendChild(div4);
     bookContainer.appendChild(div1);
@@ -58,26 +74,4 @@ function filter() {
     }
   }
   renderCover(filteredBooks); // Render the function above with the filteredBooks array
-}
-
-// Create flip-card-back
-
-function backCard() {
-  let divBack = document.getElementsByClassName("flip-card-back");
-
-  let h1 = document.createElement("h1");
-  let title = allBooks[i].title;
-  title.innerHTML = title;
-  h1.appendChild(title);
-  divBack.appendChild(h1);
-
-  let p = document.createElement("p");
-  let description = allBooks[i].title;
-  description.innerHTML = description;
-  p.appendChild(description);
-  divBack.appendChild(p);
-
-  let button = document.createElement("button");
-  button.innerHTML = "Más información";
-  divBack.appendChild(button);
 }
