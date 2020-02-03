@@ -80,14 +80,16 @@ function filter() {
   renderCover(filteredBooks); // Render the function above with the filteredBooks array
 }
 
-// Galery button
-
-function galleryButton(images) {
+//Create Gallery
+function createGallery(images) {
   var gallery = document.getElementById("gallery");
   gallery.innerHTML = ""; // clean the bookcontainer at the begginig of this function so we don't get the results more than onces
   for (var i = 0; i < books.cover.length; i++) {
     var div5 = document.createElement("div");
     div5.className("gallery");
+
+    // var a = document.createElement("a");
+    // a.setAttribute = ("href", "" )
 
     var img = document.createElement("img");
     img.id = i;
@@ -96,4 +98,4 @@ function galleryButton(images) {
     div5.appendChild(img);
   }
 }
-// galleryButton();
+// createGallery();
