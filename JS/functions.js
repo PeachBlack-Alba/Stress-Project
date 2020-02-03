@@ -7,6 +7,9 @@ function getAllBooks() {
     allBooks.push(data.books[i]);
   }
   renderCover(allBooks); // we want to show allbooks at the begging of the screen
+  /* document.getElementById("moreInfo").addEventListener("click", function() {
+    console.log("test");
+  }); */
 }
 getAllBooks();
 
@@ -52,8 +55,11 @@ function renderCover(books) {
     let button = document.createElement("button");
     button.className = "button";
     button.innerHTML = "Más información";
-    // button.style.backgroundColor = "red";
-    // button.style.borderRadius = "4px";
+    // button.setAttribute = ("id", allBooks[i].detail);
+    button.setAttribute("id", allBooks[i].detail);
+    button.addEventListener("click", function(event) {
+      createGallery(event);
+    });
     div4.appendChild(button);
 
     div2.appendChild(div3);
@@ -81,21 +87,13 @@ function filter() {
 }
 
 //Create Gallery
-function createGallery(images) {
-  var gallery = document.getElementById("gallery");
-  gallery.innerHTML = ""; // clean the bookcontainer at the begginig of this function so we don't get the results more than onces
-  for (var i = 0; i < books.cover.length; i++) {
-    var div5 = document.createElement("div");
-    div5.className("gallery");
+function createGallery(event) {
+  console.log(event.target.id);
+  var img = document.createElement("img");
+  img.setAttribute("src", event.target.id);
 
-    // var a = document.createElement("a");
-    // a.setAttribute = ("href", "" )
-
-    var img = document.createElement("img");
-    img.id = i;
-    img.src = books.cover[i];
-
-    div5.appendChild(img);
-  }
+  var popup = document.getElementById("popup");
+  popup.appendChild(img);
 }
+
 // createGallery();
