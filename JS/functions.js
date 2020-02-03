@@ -7,9 +7,6 @@ function getAllBooks() {
     allBooks.push(data.books[i]);
   }
   renderCover(allBooks); // we want to show allbooks at the begging of the screen
-  /* document.getElementById("moreInfo").addEventListener("click", function() {
-    console.log("test");
-  }); */
 }
 getAllBooks();
 
@@ -89,11 +86,20 @@ function filter() {
 //Create Gallery
 function createGallery(event) {
   console.log(event.target.id);
+  var popup = document.getElementById("popup");
+  popup.innerHTML = ""; //we clear the popup so it doesn't print all the times we click
   var img = document.createElement("img");
+  img.className = "slides";
   img.setAttribute("src", event.target.id);
 
-  var popup = document.getElementById("popup");
-  popup.appendChild(img);
-}
+  var span = document.createElement("span");
+  span.className = "close-cursor";
+  span.innerHTML = "&times;";
 
-// createGallery();
+  span.onclick = function() {
+    popup.style.display = "none";
+  };
+  popup.appendChild(span);
+  popup.appendChild(img);
+  popup.style.display = "block";
+}
