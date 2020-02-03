@@ -28,6 +28,7 @@ function renderCover(books) {
     div3.className = "flip-card-front";
 
     var img = document.createElement("img");
+    img.className = "coverImg";
     img.setAttribute("src", books[i].cover);
     img.setAttribute("height", "auto");
     img.setAttribute("width", "200px");
@@ -37,19 +38,22 @@ function renderCover(books) {
     div4.className = "flip-card-back";
 
     let h1 = document.createElement("h1");
+    h1.setAttribute("font-family", "serif");
     let title = allBooks[i].title;
-
     h1.innerHTML = title;
     div4.appendChild(h1);
 
     let p = document.createElement("p");
-    let description = allBooks[i].title;
+    let description = allBooks[i].description;
     p.innerHTML = description;
 
     div4.appendChild(p);
 
     let button = document.createElement("button");
+    button.className = "button";
     button.innerHTML = "Más información";
+    // button.style.backgroundColor = "red";
+    // button.style.borderRadius = "4px";
     div4.appendChild(button);
 
     div2.appendChild(div3);
@@ -75,3 +79,21 @@ function filter() {
   }
   renderCover(filteredBooks); // Render the function above with the filteredBooks array
 }
+
+// Galery button
+
+function galleryButton(images) {
+  var gallery = document.getElementById("gallery");
+  gallery.innerHTML = ""; // clean the bookcontainer at the begginig of this function so we don't get the results more than onces
+  for (var i = 0; i < books.cover.length; i++) {
+    var div5 = document.createElement("div");
+    div5.className("gallery");
+
+    var img = document.createElement("img");
+    img.id = i;
+    img.src = books.cover[i];
+
+    div5.appendChild(img);
+  }
+}
+// galleryButton();
