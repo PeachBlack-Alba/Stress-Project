@@ -181,36 +181,7 @@ input[type="text"]:focus {
 }
 
 /* Popup */
-/* #popup { */
-/* 
-.slides {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 400px;
-}
 
-/* The Close Button */
-/* .close-cursor {
-  color: white;
-  position: absolute;
-
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close-cursor:hover,
-.close-cursorfocus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-} */
-
-/* Style the Image Used to Trigger the Modal */
-
-/* The Modal (background) */
 .popup {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -229,8 +200,11 @@ input[type="text"]:focus {
 .slides {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 400px;
 }
 
 /* Add Animation - Zoom in the Modal */
@@ -251,10 +225,10 @@ input[type="text"]:focus {
 /* The Close Button */
 .close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+  top: 10px;
+  right: 25px;
   color: #f1f1f1;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   transition: 0.3s;
 }
